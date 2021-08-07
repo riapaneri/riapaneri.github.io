@@ -1,0 +1,144 @@
+.overlay {
+	width:100%;
+	height:100%;
+	position:absolute;
+	z-index:3;
+	background-color:rgba(0, 0, 0, 0.4);
+	
+}
+.slides-container{
+	opacity:0.5;
+}
+.slides-navigation{
+	z-index:6;
+}
+
+.slides-navigation .prev,
+.slides-navigation .next {
+	width:47px;
+	height:47px;
+	background-size:cover;
+	background-repeat:no-repeat;
+}
+
+.slides-navigation a.prev {
+	left:20px;
+	background-image:url(../img/icons/prev.png);
+}
+
+.slides-navigation a.next {
+	right: 20px;
+	background-image:url(../img/icons/next.png);
+}
+
+.titleMessage{
+	position:absolute;
+	width:100%;
+	height:250px;
+	top:60%;
+	z-index:5;
+	text-align:center;
+	margin-top:-125px;
+	opacity:1.0;
+}
+.titleMessage .heading p{
+	color:#000000;
+	text-shadow:0px 2px 5px rgba(0,0,0,0.4);
+	font-weight: 100;
+	letter-spacing: 7px;
+	
+
+}
+
+.titleMessage .heading .main{
+	font-size: 50px;
+}
+
+.titleMessage .heading .sub{
+	font-size: 23px;
+}
+
+.section {
+	padding: 100px 0;
+}
+
+.aboutImage {
+	max-width: 80%;
+}
+
+.skillSection{
+
+	background-color:#696969;
+	color:#ffff;	
+}
+.skill{
+	text-align:center;
+
+}
+.chart
+{
+	position:relative;
+	width:152px;
+	height:152px;
+	display:inline-block;
+	margin-left:25px;
+	text-align:center;
+}
+.chart canvas{
+
+	position:absolute;
+	left:0;
+	top:0;
+
+}
+.chart percent{
+	color:#0000;
+	line-height:152px;
+	display:inline-block;
+	font-size:35px;
+}
+.contactButton{
+	
+	padding:15px 20px;
+	display:inline-block;
+	margin-top:20px;
+	border:1px;
+	border-color:'#000000';
+	border-radius:2px;
+}
+#navigation{
+	background-color:rgba(0,0,0,.075);
+	padding:20px 10px;
+	z-index:100;
+}
+#navigation li{
+	padding:0 10px;
+
+}
+#navigation li a{
+	color:#ffff;
+}
+.navbar-toggler-icon{
+	background-color:url(.../img/icons/menu.png);
+	background-size:100%;
+	color:#ffff;
+	border: 1px solid #f8f9fa;
+	border-radius: .25rem;
+
+}
+.navbar-brand{
+	color:#ffff;
+	font-size: 1rem;
+
+}
+.navbar{
+	    position: fixed;
+	    width: 100%;
+}
+.copyrightSection{
+	background-color:#0000;
+	color:#ffff;
+	padding:30px 5px;
+
+
+}
