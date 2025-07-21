@@ -1,269 +1,141 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Profile</title>
+  <title>Profile</title>
+  <link rel="stylesheet" href="css/superslides.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
 
-	<link rel="stylesheet" type="text/css" href="css/superslides.css">
-	<link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/jquery.superslides.min.js"></script>
+  <script src="js/jquery.easypiechart.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/typed.min.js"></script>
+  <script src="https://unpkg.com/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="js/script.js"></script>
 
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="js/jquery.superslides.min.js"></script>
-	<script src="js/jquery.easypiechart.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/typed.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-		crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-		crossorigin="anonymous"></script>
-
-	<script src="js/script.js"></script>
-	<script type="text/javascript" src="https://unpkg.com/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
-	<script>
-  $(document).ready(function () {
-    var $grid = $('.grid').isotope({
-      itemSelector: '.element-item',
-      layoutMode: 'fitRows'
-    });
-
-    $('#filters').on('click', 'button', function () {
-      $('#filters button').removeClass('btn-primary').addClass('btn-outline-primary');
-      $(this).removeClass('btn-outline-primary').addClass('btn-primary');
-      var filterValue = $(this).attr('data-filter');
-      $grid.isotope({ filter: filterValue });
-    });
-  });
-</script>
-
+  <style>
+    .portfolio .card { box-shadow: 0 0 10px rgba(0,0,0,0.1); border-radius: 10px; overflow: hidden; }
+    .portfolio .card img { height: 200px; object-fit: cover; }
+    .portfolio .btn { margin: 5px; }
+  </style>
 </head>
-
 <body>
-	<nav id="navigation" class="navbar navbar-expand-lg">
-		<a class="navbar-brand" href="#">Menu</a>
 
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-			aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
+<nav id="navigation" class="navbar navbar-expand-lg">
+  <a class="navbar-brand" href="#">Menu</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+      <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+      <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+      <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
 
-		<div class="collapse navbar-collapse" id="navbarNav">
-			<ul class="navbar-nav">
-				<li class="nav-item active">
-					<a class="nav-link" href="#about">About<span class="sr-only">(current)</span></a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#skills">Skills</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#contact">Contact</a>
-				</li>
-			</ul>
-		</div>
-	</nav>
-
-	<div id="slides">
-
-		<div class="overlay"></div>
-
-		<div class="slides-container">
-			<img src="img/slide1.jpg" alt="">
-			<img src="img/slide2.jpg" alt="">
-			<img src="img/slide3.jpg" alt="">
-		</div>
-
-		<div class="titleMessage">
-			<div class="heading">
-				<p class="main">RIA PANERI RAVAL</p>
-				<p class="sub typed"></p>
-			</div>
-		</div>
-
-
-		<nav class="slides-navigation">
-			<a href="#" class="next"></a>
-			<a href="#" class="prev"></a>
-		</nav>
-
-
-	</div>
-
-
-
-
-	<div id="about" class="section">
-
-		<div class="container">
-
-			<div class="row">
-
-				<div class="col-md-5">
-					<img class="aboutImage" src="img/Ria.jpg">
-				</div>
-
-				<div class="col-md-7">
-					<h4>My Name is Ria </h4>
-					<p>I hold a postgraduate degree in Computer Engineering from B.H Gardi College of Engineering, Gujarat, with an impressive CPI score of 8.81. My academic background has provided me with an in-depth understanding of software development and design.</p>
-<p>In my previous role as a PowerBuilder, I was responsible for creating bank web pages by closely working with databases and firing queries. This experience has sharpened my skills in database management and web development.</p>
-<p>As a Technical Support personnel for Treebo process in Hinduja, my primary responsibility was to handle technical issues and CRM. This role helped me gain hands-on experience in resolving complex technical issues within a stipulated timeline.</p>
-<p>I was working as a Digital Marketing Manager and Website Developer, responsible for developing websites and managing SEO. As a part of my role, I have also been actively involved in data analysis and visualization. By analyzing website traffic and user engagement, I have been able to identify areas for improvement and enhance the user experience.</p>
-<p>I have expertise in using data analysis and visualization tools such as Google Analytics and Tableau. By leveraging these tools, I have been able to extract valuable insights and present them in an easy-to-understand format.</p>
-<p>Overall, my experience in software development, technical support, and digital marketing has equipped me with a diverse skill set, including data analysis and visualization. I am confident that I can leverage my skills to add value to any organization I work with.</p>
-
-				</div>
-
-			</div>
-
-		</div>
-
-	</div>
-
-	<div id="skills" class="skillSection section">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 text-center">
-					<h2>TECHNICAL SKILLS</h2>
-					<p>Representation of my proficiency</p>
-
-				</div>
-				<div class="owl-carousel owl-theme">
-
-					<div class="skill">
-
-						<span class="chart" data-percent="90" style="font-size: large">90%
-						</span>
-						<h4>HTML</h4>
-						<p>Used in web based projects</p>
-					</div>
-
-					<div class="skill">
-						<span class="chart" data-percent="80" style="font-size: large">80%
-						</span>
-						<h4>CSS</h4>
-						<p>Used in web based projects</p>
-					</div>
-					<div class="skill">
-						<span class="chart" data-percent="80" style="font-size: large">90%
-						</span>
-						<h4>WORDPRESS</h4>
-						<p>Used in web based projects</p>
-					</div>
-
-					<div class="skill">
-						<span class="chart" data-percent="70" style="font-size: large">70%
-						</span>
-						<h4>SEO</h4>
-						<p>Used in web based projects</p>
-					</div>
-					<div class="skill">
-						<span class="chart" data-percent="80" style="font-size: large">80%
-						</span>
-						<h4>PowerBI</h4>
-						<p>Used in web based projects</p>
-					</div>
-
-					<div class="skill">
-						<span class="chart" data-percent="70" style="font-size: large">70%
-						</span>
-						<h4>Data Analysis</h4>
-						<p>Used in dashboard projects</p>
-					</div>
-					<div class="skill">
-						<span class="chart" data-percent="40" style="font-size: large">80%
-						</span>
-						<h4>Data Visualisation</h4>
-						<p>Used in web based projects</p>
-					</div>
-					<div class="skill">
-						<span class="chart" data-percent="80" style="font-size: large">90%
-						</span>
-						<h4>Figma</h4>
-						<p>Used in web based projects</p>
-					</div>
-					<div class="skill">
-						<span class="chart" data-percent="30" style="font-size: large">70%
-						</span>
-						<h4>Excel</h4>
-						<p>Used in web based projects</p>
-					</div>
-
-				</div>
-
-
-
-			</div>
-
-		</div>
-
-	</div>
-
-	<!-- Portfolio Section -->
-<div id="portfolio" class="section">
-  <div class="container">
-    <div class="row text-center mb-4">
-      <div class="col-md-12">
-        <h2>My Portfolio</h2>
-        <p>Some of the projects I’ve worked on recently</p>
-        <div id="filters" class="button-group">
-          <button class="btn btn-primary" data-filter="*">All</button>
-          <button class="btn btn-outline-primary" data-filter=".excel">Excel</button>
-          <button class="btn btn-outline-primary" data-filter=".figma">Figma</button>
-          <button class="btn btn-outline-primary" data-filter=".website">Website</button>
-        </div>
-      </div>
+<!-- Slides -->
+<div id="slides">
+  <div class="overlay"></div>
+  <div class="slides-container">
+    <img src="img/slide1.jpg"><img src="img/slide2.jpg"><img src="img/slide3.jpg">
+  </div>
+  <div class="titleMessage">
+    <div class="heading">
+      <p class="main">RIA PANERI RAVAL</p>
+      <p class="sub typed"></p>
     </div>
-    <div class="row grid">
-      <div class="col-md-4 element-item excel">
-        <div class="card">
-          <img src="img/project1.png" class="card-img-top" alt="Excel Project">
-          <div class="card-body text-center">
-            <h5 class="card-title">Excel Dashboard</h5>
-          </div>
-        </div>
+  </div>
+  <nav class="slides-navigation"><a href="#" class="next"></a><a href="#" class="prev"></a></nav>
+</div>
+
+<!-- About -->
+<div id="about" class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5"><img class="aboutImage" src="img/Ria.jpg"></div>
+      <div class="col-md-7">
+        <h4>My Name is Ria</h4>
+        <p>I hold a postgraduate degree in Computer Engineering from B.H Gardi College of Engineering, Gujarat, with an impressive CPI score of 8.81...</p>
+        <p>PowerBuilder for banking apps, technical support at Treebo (Hinduja), website developer, and SEO manager.</p>
+        <p>Skills include Google Analytics, Tableau, Power BI, Excel, CRM, and dashboard visualization.</p>
       </div>
-      <div class="col-md-4 element-item figma">
-        <div class="card">
-          <img src="img/project2.png" class="card-img-top" alt="Figma UI">
-          <div class="card-body text-center">
-            <h5 class="card-title">Figma Mockup</h5>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 element-item website">
-        <div class="card">
-          <img src="img/project3.png" class="card-img-top" alt="Website Project">
-          <div class="card-body text-center">
-            <h5 class="card-title">WordPress Site</h5>
-          </div>
-        </div>
-      </div>
-      <!-- Add more projects similarly -->
     </div>
   </div>
 </div>
 
-	<div id="contact" class="contactSection section">
-		<div class="col-md-12 text-center">
-			<p class="subHeading">like what you see!</p>
-			<h2>I would love to hear</h2>
-			<a href="mailTo:riapaneri7@gmail.com" class="contactButton"><b><i>Get in touch ....</i></b></a>
-		</div>
+<!-- Skills -->
+<div id="skills" class="skillSection section">
+  <div class="container text-center">
+    <h2>TECHNICAL SKILLS</h2>
+    <p>Representation of my proficiency</p>
+    <div class="owl-carousel owl-theme">
+      <div class="skill"><span class="chart" data-percent="90">90%</span><h4>HTML</h4></div>
+      <div class="skill"><span class="chart" data-percent="80">80%</span><h4>CSS</h4></div>
+      <div class="skill"><span class="chart" data-percent="90">90%</span><h4>WordPress</h4></div>
+      <div class="skill"><span class="chart" data-percent="70">70%</span><h4>SEO</h4></div>
+      <div class="skill"><span class="chart" data-percent="80">80%</span><h4>PowerBI</h4></div>
+      <div class="skill"><span class="chart" data-percent="70">70%</span><h4>Data Analysis</h4></div>
+      <div class="skill"><span class="chart" data-percent="80">80%</span><h4>Data Visualization</h4></div>
+      <div class="skill"><span class="chart" data-percent="90">90%</span><h4>Figma</h4></div>
+      <div class="skill"><span class="chart" data-percent="70">70%</span><h4>Excel</h4></div>
+    </div>
+  </div>
+</div>
 
-	</div>
-	
-	<!--<div class="copyrightSection">
-	<div class="col-md-12" text-center>
-		<p>&copy;Copyright Ria Raval 2020</p>
-	</div>
-</div>-->
+<!-- Portfolio -->
+<div id="portfolio" class="section portfolio">
+  <div class="container">
+    <div class="text-center">
+      <h2>My Portfolio</h2>
+      <p>Projects I've worked on</p>
+      <div class="mb-4">
+        <button class="btn btn-primary" data-filter="*">All</button>
+        <button class="btn btn-outline-primary" data-filter=".excel">Excel</button>
+        <button class="btn btn-outline-primary" data-filter=".figma">Figma</button>
+        <button class="btn btn-outline-primary" data-filter=".website">Website</button>
+      </div>
+    </div>
+    <div class="row grid">
+      <div class="col-md-4 element-item excel">
+        <div class="card"><img src="img/project1.png"><div class="card-body"><h5>Excel Dashboard</h5></div></div>
+      </div>
+      <div class="col-md-4 element-item figma">
+        <div class="card"><img src="img/project2.png"><div class="card-body"><h5>Figma UI</h5></div></div>
+      </div>
+      <div class="col-md-4 element-item website">
+        <div class="card"><img src="img/project3.png"><div class="card-body"><h5>Healthcare Site</h5></div></div>
+      </div>
+    </div>
+  </div>
+</div>
 
+<!-- Contact -->
+<div id="contact" class="contactSection section">
+  <div class="col-md-12 text-center">
+    <p class="subHeading">like what you see!</p>
+    <h2>I would love to hear</h2>
+    <a href="mailto:riapaneri7@gmail.com" class="contactButton"><b><i>Get in touch ....</i></b></a>
+  </div>
+</div>
 
+<!-- Isotope filtering -->
+<script>
+$(document).ready(function () {
+  var $grid = $('.grid').isotope({ itemSelector: '.element-item', layoutMode: 'fitRows' });
+  $('.btn').on('click', function () {
+    $('.btn').removeClass('btn-primary').addClass('btn-outline-primary');
+    $(this).removeClass('btn-outline-primary').addClass('btn-primary');
+    var filterValue = $(this).attr('data-filter');
+    $grid.isotope({ filter: filterValue });
+  });
+});
+</script>
 
 </body>
-
 </html>
