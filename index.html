@@ -25,6 +25,22 @@
 
 	<script src="js/script.js"></script>
 	<script type="text/javascript" src="https://unpkg.com/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
+	<script>
+  $(document).ready(function () {
+    var $grid = $('.grid').isotope({
+      itemSelector: '.element-item',
+      layoutMode: 'fitRows'
+    });
+
+    $('#filters').on('click', 'button', function () {
+      $('#filters button').removeClass('btn-primary').addClass('btn-outline-primary');
+      $(this).removeClass('btn-outline-primary').addClass('btn-primary');
+      var filterValue = $(this).attr('data-filter');
+      $grid.isotope({ filter: filterValue });
+    });
+  });
+</script>
+
 </head>
 
 <body>
@@ -186,6 +202,51 @@
 
 	</div>
 
+	<!-- Portfolio Section -->
+<div id="portfolio" class="section">
+  <div class="container">
+    <div class="row text-center mb-4">
+      <div class="col-md-12">
+        <h2>My Portfolio</h2>
+        <p>Some of the projects I’ve worked on recently</p>
+        <div id="filters" class="button-group">
+          <button class="btn btn-primary" data-filter="*">All</button>
+          <button class="btn btn-outline-primary" data-filter=".excel">Excel</button>
+          <button class="btn btn-outline-primary" data-filter=".figma">Figma</button>
+          <button class="btn btn-outline-primary" data-filter=".website">Website</button>
+        </div>
+      </div>
+    </div>
+    <div class="row grid">
+      <div class="col-md-4 element-item excel">
+        <div class="card">
+          <img src="img/project1.png" class="card-img-top" alt="Excel Project">
+          <div class="card-body text-center">
+            <h5 class="card-title">Excel Dashboard</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 element-item figma">
+        <div class="card">
+          <img src="img/project2.png" class="card-img-top" alt="Figma UI">
+          <div class="card-body text-center">
+            <h5 class="card-title">Figma Mockup</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 element-item website">
+        <div class="card">
+          <img src="img/project3.png" class="card-img-top" alt="Website Project">
+          <div class="card-body text-center">
+            <h5 class="card-title">WordPress Site</h5>
+          </div>
+        </div>
+      </div>
+      <!-- Add more projects similarly -->
+    </div>
+  </div>
+</div>
+
 	<div id="contact" class="contactSection section">
 		<div class="col-md-12 text-center">
 			<p class="subHeading">like what you see!</p>
@@ -194,6 +255,7 @@
 		</div>
 
 	</div>
+	
 	<!--<div class="copyrightSection">
 	<div class="col-md-12" text-center>
 		<p>&copy;Copyright Ria Raval 2020</p>
