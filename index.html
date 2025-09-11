@@ -1,8 +1,97 @@
-<!-- Add this inside <head> before </head> -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Profile</title>
 
-<!-- Portfolio -->
+  <!-- existing CSS -->
+  <link rel="stylesheet" href="css/superslides.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Lightbox CSS (for opening images fullscreen) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
+
+  <!-- inline small tweaks for portfolio visuals -->
+  <style>
+    .portfolio .card { box-shadow: 0 0 10px rgba(0,0,0,0.1); border-radius: 10px; overflow: hidden; background:#fff; }
+    .portfolio .card img { height: 200px; object-fit: cover; width:100%; display:block; }
+    .portfolio .btn { margin: 5px; }
+    .portfolio .card-body { text-align:center; padding:12px; }
+    .portfolio h2 { margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+
+<nav id="navigation" class="navbar navbar-expand-lg">
+  <a class="navbar-brand" href="#">Menu</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+      <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+      <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+      <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Slides -->
+<div id="slides">
+  <div class="overlay"></div>
+  <div class="slides-container">
+    <img src="img/slide1.jpg"><img src="img/slide2.jpg"><img src="img/slide3.jpg">
+  </div>
+  <div class="titleMessage">
+    <div class="heading">
+      <p class="main">RIA PANERI RAVAL</p>
+      <p class="sub typed"></p>
+    </div>
+  </div>
+  <nav class="slides-navigation"><a href="#" class="next"></a><a href="#" class="prev"></a></nav>
+</div>
+
+<!-- About -->
+<div id="about" class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5"><img class="aboutImage" src="img/Ria.jpg" alt="Ria"></div>
+      <div class="col-md-7">
+        <h4>My Name is Ria</h4>
+        <p>I’m a results-driven Services Analyst with over 6 years of experience specializing in data analysis, BI dashboarding, and financial reporting. I hold a postgraduate degree (M.Tech) in Computer Software from B.H. Gardi College of Engineering, Gujarat.</p>
+        <p>Currently, I work as a Senior Associate – Projects at Borderless Access, where I lead end-to-end reporting implementations using Power BI, Tableau, and Excel. My responsibilities include building interactive dashboards, performing variance and trend analysis, and transforming business KPIs into actionable insights for global clients.</p>
+        <p>Previously, I served as a Technical SEO & Reporting Analyst at AnandaVak, where I managed WordPress-based websites, optimized technical SEO, and developed performance dashboards using Google Analytics and Google Data Studio. Earlier in my career at EYUVA Technologies, I focused on on-page SEO, user engagement optimization, and visual dashboard reporting.</p>
+        <p>With hands-on experience in tools like Tableau, Power BI, Microsoft Excel, Google Analytics, and Figma, I combine technical skills with a keen eye for business performance. I’m passionate about turning data into clear, decision-ready insights that add measurable value to organizations.</p>
+        <p>Skills include Google Analytics, Tableau, Power BI, Excel, CRM, and dashboard visualization.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Skills -->
+<div id="skills" class="skillSection section">
+  <div class="container text-center">
+    <h2>TECHNICAL SKILLS</h2>
+    <p>Representation of my proficiency</p>
+    <div class="owl-carousel owl-theme">
+      <div class="skill"><span class="chart" data-percent="90">90%</span><h4>HTML</h4></div>
+      <div class="skill"><span class="chart" data-percent="80">80%</span><h4>CSS</h4></div>
+      <div class="skill"><span class="chart" data-percent="90">90%</span><h4>WordPress</h4></div>
+      <div class="skill"><span class="chart" data-percent="70">70%</span><h4>SEO</h4></div>
+      <div class="skill"><span class="chart" data-percent="80">80%</span><h4>PowerBI</h4></div>
+      <div class="skill"><span class="chart" data-percent="70">70%</span><h4>Data Analysis</h4></div>
+      <div class="skill"><span class="chart" data-percent="80">80%</span><h4>Data Visualization</h4></div>
+      <div class="skill"><span class="chart" data-percent="90">90%</span><h4>Figma</h4></div>
+      <div class="skill"><span class="chart" data-percent="70">70%</span><h4>Excel</h4></div>
+    </div>
+  </div>
+</div>
+
+<!-- Portfolio (IMPROVED) -->
 <div id="portfolio" class="section portfolio">
   <div class="container">
     <div class="text-center">
@@ -22,23 +111,25 @@
       <div class="col-md-4 element-item excel">
         <div class="card">
           <a href="img/Deal tracker.jpg" data-lightbox="portfolio" data-title="Deal Tracker Dashboard">
-            <img src="img/Deal tracker.jpg" alt="">
+            <img src="img/Deal tracker.jpg" alt="Deal Tracker">
           </a>
           <div class="card-body"><h5>Deal Tracker Dashboard</h5></div>
         </div>
       </div>
+
       <div class="col-md-4 element-item excel">
         <div class="card">
           <a href="img/Email sales .jpg" data-lightbox="portfolio" data-title="Email Sales Dashboard">
-            <img src="img/Email sales .jpg" alt="">
+            <img src="img/Email sales .jpg" alt="Email Sales">
           </a>
           <div class="card-body"><h5>Email Sales Dashboard</h5></div>
         </div>
       </div>
+
       <div class="col-md-4 element-item excel">
         <div class="card">
           <a href="img/Sales CRM .jpg" data-lightbox="portfolio" data-title="Sales CRM Dashboard">
-            <img src="img/Sales CRM .jpg" alt="">
+            <img src="img/Sales CRM .jpg" alt="Sales CRM">
           </a>
           <div class="card-body"><h5>Sales CRM Dashboard</h5></div>
         </div>
@@ -47,34 +138,36 @@
       <!-- Figma Designs -->
       <div class="col-md-4 element-item figma">
         <div class="card">
-          <a href="img/Figma design - occur community platform.jpg" data-lightbox="portfolio" data-title="Occur Community Platform">
-            <img src="img/Figma design - occur community platform.jpg" alt="">
+          <a href="img/Figma design - occur community platform .jpg" data-lightbox="portfolio" data-title="Occur Community Platform">
+            <img src="img/Figma design - occur community platform .jpg" alt="Occur Community Platform">
           </a>
           <div class="card-body"><h5>Occur Community Platform</h5></div>
         </div>
       </div>
+
       <div class="col-md-4 element-item figma">
         <div class="card">
           <a href="img/Figma design - respiratory portal.jpg" data-lightbox="portfolio" data-title="Respiratory Portal">
-            <img src="img/Figma design - respiratory portal.jpg" alt="">
+            <img src="img/Figma design - respiratory portal.jpg" alt="Respiratory Portal">
           </a>
           <div class="card-body"><h5>Respiratory Portal</h5></div>
         </div>
       </div>
+
       <div class="col-md-4 element-item figma">
         <div class="card">
           <a href="img/Figma design-Gastro community Portal.jpg" data-lightbox="portfolio" data-title="Gastro Community Portal">
-            <img src="img/Figma design-Gastro community Portal.jpg" alt="">
+            <img src="img/Figma design-Gastro community Portal.jpg" alt="Gastro Community Portal">
           </a>
           <div class="card-body"><h5>Gastro Community Portal</h5></div>
         </div>
       </div>
 
-      <!-- Google Analytics -->
+      <!-- Google Analytics (analytics / dashboards) -->
       <div class="col-md-4 element-item excel">
         <div class="card">
           <a href="img/Google analytics dashboard.jpg" data-lightbox="portfolio" data-title="Google Analytics Dashboard">
-            <img src="img/Google analytics dashboard.jpg" alt="">
+            <img src="img/Google analytics dashboard.jpg" alt="Google Analytics">
           </a>
           <div class="card-body"><h5>Google Analytics Dashboard</h5></div>
         </div>
@@ -84,54 +177,177 @@
       <div class="col-md-4 element-item website">
         <div class="card">
           <a href="img/Healthcare Portal.jpg" data-lightbox="portfolio" data-title="Healthcare Portal">
-            <img src="img/Healthcare Portal.jpg" alt="">
+            <img src="img/Healthcare Portal.jpg" alt="Healthcare Portal">
           </a>
           <div class="card-body"><h5>Healthcare Portal</h5></div>
         </div>
       </div>
+
       <div class="col-md-4 element-item website">
         <div class="card">
           <a href="img/Website - drmadhavupadhyay.png" data-lightbox="portfolio" data-title="Dr. Madhav Upadhyay Site">
-            <img src="img/Website - drmadhavupadhyay.png" alt="">
+            <img src="img/Website - drmadhavupadhyay.png" alt="Dr. Madhav">
           </a>
           <div class="card-body"><h5>Dr. Madhav Upadhyay Site</h5></div>
         </div>
       </div>
-      <!-- add your other website projects the same way -->
 
-      <!-- Tableau -->
+      <div class="col-md-4 element-item website">
+        <div class="card">
+          <a href="img/Website - interiospacehomz.png" data-lightbox="portfolio" data-title="InterioSpace Homz">
+            <img src="img/Website - interiospacehomz.png" alt="InterioSpace Homz">
+          </a>
+          <div class="card-body"><h5>InterioSpace Homz</h5></div>
+        </div>
+      </div>
+
+      <div class="col-md-4 element-item website">
+        <div class="card">
+          <a href="img/website - analyfied.png" data-lightbox="portfolio" data-title="Analyfied">
+            <img src="img/website - analyfied.png" alt="Analyfied">
+          </a>
+          <div class="card-body"><h5>Analyfied</h5></div>
+        </div>
+      </div>
+
+      <div class="col-md-4 element-item website">
+        <div class="card">
+          <a href="img/website - eurolanditstore.png" data-lightbox="portfolio" data-title="Euroland IT Store">
+            <img src="img/website - eurolanditstore.png" alt="Euroland IT Store">
+          </a>
+          <div class="card-body"><h5>Euroland IT Store</h5></div>
+        </div>
+      </div>
+
+      <div class="col-md-4 element-item website">
+        <div class="card">
+          <a href="img/website - jbsnaturopathy.png" data-lightbox="portfolio" data-title="JBS Naturopathy">
+            <img src="img/website - jbsnaturopathy.png" alt="JBS Naturopathy">
+          </a>
+          <div class="card-body"><h5>JBS Naturopathy</h5></div>
+        </div>
+      </div>
+
+      <div class="col-md-4 element-item website">
+        <div class="card">
+          <a href="img/website - pencilsketch.png" data-lightbox="portfolio" data-title="PencilSketch">
+            <img src="img/website - pencilsketch.png" alt="PencilSketch">
+          </a>
+          <div class="card-body"><h5>PencilSketch Site</h5></div>
+        </div>
+      </div>
+
+      <div class="col-md-4 element-item website">
+        <div class="card">
+          <a href="img/website - trinityenterprise.png" data-lightbox="portfolio" data-title="Trinity Enterprise">
+            <img src="img/website - trinityenterprise.png" alt="Trinity Enterprise">
+          </a>
+          <div class="card-body"><h5>Trinity Enterprise</h5></div>
+        </div>
+      </div>
+
+      <!-- Tableau images -->
       <div class="col-md-4 element-item tableau">
         <div class="card">
           <a href="img/image (3).png" data-lightbox="portfolio" data-title="Tableau Dashboard 1">
-            <img src="img/image (3).png" alt="">
+            <img src="img/image (3).png" alt="Tableau 1">
           </a>
           <div class="card-body"><h5>Tableau Dashboard 1</h5></div>
         </div>
       </div>
+
       <div class="col-md-4 element-item tableau">
         <div class="card">
           <a href="img/image (4).png" data-lightbox="portfolio" data-title="Tableau Dashboard 2">
-            <img src="img/image (4).png" alt="">
+            <img src="img/image (4).png" alt="Tableau 2">
           </a>
           <div class="card-body"><h5>Tableau Dashboard 2</h5></div>
         </div>
       </div>
+
       <div class="col-md-4 element-item tableau">
         <div class="card">
           <a href="img/image (5).png" data-lightbox="portfolio" data-title="Tableau Dashboard 3">
-            <img src="img/image (5).png" alt="">
+            <img src="img/image (5).png" alt="Tableau 3">
           </a>
           <div class="card-body"><h5>Tableau Dashboard 3</h5></div>
         </div>
       </div>
+
       <div class="col-md-4 element-item tableau">
         <div class="card">
           <a href="img/image (6).png" data-lightbox="portfolio" data-title="Tableau Dashboard 4">
-            <img src="img/image (6).png" alt="">
+            <img src="img/image (6).png" alt="Tableau 4">
           </a>
           <div class="card-body"><h5>Tableau Dashboard 4</h5></div>
         </div>
       </div>
-    </div>
+
+    </div><!-- /.row.grid -->
+  </div><!-- /.container -->
+</div><!-- /.portfolio -->
+
+<!-- Contact -->
+<div id="contact" class="contactSection section">
+  <div class="col-md-12 text-center">
+    <p class="subHeading">like what you see!</p>
+    <h2>I would love to hear</h2>
+    <a href="mailto:riapaneri7@gmail.com" class="contactButton"><b><i>Get in touch ....</i></b></a>
   </div>
 </div>
+
+<!-- JS - keep original order but ensure jQuery loaded first -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/jquery.superslides.min.js"></script>
+<script src="js/jquery.easypiechart.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/typed.min.js"></script>
+
+<!-- Isotope -->
+<script src="https://unpkg.com/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
+
+<!-- Lightbox JS (after jQuery) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<!-- Your custom script -->
+<script src="js/script.js"></script>
+
+<!-- Filtering script (uses Isotope) -->
+<script>
+$(document).ready(function () {
+  // Initialize isotope grid
+  var $grid = $('.grid').isotope({
+    itemSelector: '.element-item',
+    layoutMode: 'fitRows'
+  });
+
+  // Filter button behavior
+  $('.portfolio').on('click', '.btn', function (e) {
+    e.preventDefault();
+    var filterValue = $(this).attr('data-filter');
+    $grid.isotope({ filter: filterValue });
+
+    // Active button styling: reset all then activate clicked
+    $('.portfolio .btn').removeClass('btn-primary').addClass('btn-outline-primary');
+    $(this).removeClass('btn-outline-primary').addClass('btn-primary');
+  });
+
+  // Make "All" active on load
+  $('.portfolio .btn[data-filter="*"]').removeClass('btn-outline-primary').addClass('btn-primary');
+
+  // Lightbox options (optional tweak)
+  if (typeof lightbox !== 'undefined') {
+    lightbox.option({
+      'resizeDuration': 200,
+      'wrapAround': true,
+      'fadeDuration': 200
+    });
+  }
+});
+</script>
+
+</body>
+</html>
