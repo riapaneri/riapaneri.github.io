@@ -25,25 +25,24 @@
 
   <style>
 
-    /* Section headings */
-#skills h2,
-#skills p,
-#portfolio h2,
-#portfolio p {
-  color: #222 !important;   /* dark gray text */
+ #skills h2 {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 8px;
 }
 
-/* Make headings stand out */
-#skills h2,
-#portfolio h2 {
-  font-weight: 700;
-  color: #007bff !important; /* primary blue */
+#skills h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: #007bff;
+  border-radius: 2px;
 }
 
-#skills p,
-#portfolio p {
-  color: #555 !important;   /* softer gray for subtext */
-}
 
     .portfolio .card { box-shadow: 0 0 10px rgba(0,0,0,0.1); border-radius: 10px; overflow: hidden; }
     .portfolio .card img { height: 200px; object-fit: cover; }
@@ -290,5 +289,6 @@ $(document).ready(function () {
 
 </body>
 </html>
+
 
 
