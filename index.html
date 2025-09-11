@@ -6,8 +6,12 @@
   <link rel="stylesheet" href="css/owl.carousel.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
-  <!-- Font Awesome (put this in <head>) -->
+  <!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<!-- Devicon (for PowerBI, Tableau, etc.) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -36,20 +40,29 @@
 }
 .skill-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(11,24,40,0.12); }
 .skill-card .icon {
-  width:64px; height:64px; display:flex; align-items:center; justify-content:center; border-radius:50%;
-  margin: 0 auto 10px auto; font-size:28px; color:#fff;
+  width:64px; height:64px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  margin: 0 auto 10px auto;
+  font-size:30px; color:#fff; background:#007bff;
 }
-.skill-card .icon.html { background: #e34f26; }
-.skill-card .icon.css  { background: #2965f1; }
-.skill-card .icon.wp   { background: #21759b; }
-.skill-card .icon.seo  { background: #f6c343; color:#222; }
 .skill-card h5 { margin: 6px 0 4px; font-size:16px; font-weight:600; }
 .skill-card p { margin:0; color:#6c757d; font-size:14px; }
 
-/* Responsive tweaks */
+/* Different colors per skill */
+.skill-card:nth-child(1) .icon { background:#e34f26; } /* HTML */
+.skill-card:nth-child(2) .icon { background:#2965f1; } /* CSS */
+.skill-card:nth-child(3) .icon { background:#21759b; } /* WordPress */
+.skill-card:nth-child(4) .icon { background:#f6c343; color:#222; } /* SEO */
+.skill-card:nth-child(5) .icon { background:#f2c811; color:#111; } /* PowerBI */
+.skill-card:nth-child(6) .icon { background:#2f80ed; } /* Tableau */
+.skill-card:nth-child(7) .icon { background:#217346; } /* Excel */
+.skill-card:nth-child(8) .icon { background:#ff6b6b; } /* Figma */
+
+/* Responsive */
 @media (max-width:768px) {
   .skill-card { width: 140px; padding:14px; }
 }
+
   </style>
 </head>
 <body>
@@ -101,7 +114,7 @@
   </div>
 </div>
 
-<!-- SKILLS (Option 2 - Cards with Icons) -->
+<!-- SKILLS (Cards with CDN Icons) -->
 <section id="skills" class="skillSection section bg-light py-5">
   <div class="container text-center">
     <h2 class="mb-3">Technical Skills</h2>
@@ -109,57 +122,51 @@
 
     <div class="skill-cards">
       <div class="skill-card">
-        <div class="icon html"><i class="fab fa-html5"></i></div>
+        <div class="icon"><i class="fab fa-html5"></i></div>
         <h5>HTML</h5>
         <p>90% — Markup & semantic HTML</p>
       </div>
 
       <div class="skill-card">
-        <div class="icon css"><i class="fab fa-css3-alt"></i></div>
+        <div class="icon"><i class="fab fa-css3-alt"></i></div>
         <h5>CSS</h5>
         <p>80% — Styling, layouts, responsiveness</p>
       </div>
 
       <div class="skill-card">
-        <div class="icon wp"><i class="fab fa-wordpress-simple"></i></div>
+        <div class="icon"><i class="fab fa-wordpress"></i></div>
         <h5>WordPress</h5>
         <p>90% — Themes, plugins, CMS management</p>
       </div>
 
       <div class="skill-card">
-        <div class="icon seo"><i class="fas fa-search"></i></div>
+        <div class="icon"><i class="fas fa-search"></i></div>
         <h5>SEO</h5>
         <p>70% — Technical & On-page SEO</p>
       </div>
 
       <div class="skill-card">
-        <div class="icon" style="background:#0067b8;"><i class="fas fa-chart-line"></i></div>
+        <div class="icon"><i class="devicon-powerbi-plain"></i></div>
         <h5>Power BI</h5>
         <p>80% — Dashboards & Reports</p>
       </div>
 
       <div class="skill-card">
-        <div class="icon" style="background:#21759b;"><i class="fas fa-table"></i></div>
-        <h5>Data Analysis</h5>
-        <p>70% — Excel & data prep</p>
+        <div class="icon"><i class="devicon-tableau-plain"></i></div>
+        <h5>Tableau</h5>
+        <p>80% — Visual analytics</p>
       </div>
 
       <div class="skill-card">
-        <div class="icon" style="background:#2f80ed;"><i class="fas fa-chart-pie"></i></div>
-        <h5>Data Visualization</h5>
-        <p>80% — Dashboards & storytelling</p>
-      </div>
-
-      <div class="skill-card">
-        <div class="icon" style="background:#ff6b6b;"><i class="fab fa-figma"></i></div>
-        <h5>Figma</h5>
-        <p>90% — UI design & prototyping</p>
-      </div>
-
-      <div class="skill-card">
-        <div class="icon" style="background:#1d6f42;"><i class="fas fa-file-excel"></i></div>
+        <div class="icon"><i class="fas fa-file-excel"></i></div>
         <h5>Excel</h5>
         <p>70% — Advanced formulas & pivot</p>
+      </div>
+
+      <div class="skill-card">
+        <div class="icon"><i class="fab fa-figma"></i></div>
+        <h5>Figma</h5>
+        <p>90% — UI design & prototyping</p>
       </div>
     </div>
   </div>
@@ -262,3 +269,4 @@ $(document).ready(function () {
 
 </body>
 </html>
+
