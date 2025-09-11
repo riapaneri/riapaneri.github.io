@@ -1,462 +1,134 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Ria Paneri — Portfolio</title>
-
-  <!-- Bootstraps & libraries (CDN) -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-
-  <!-- Your local CSS -->
-  <link rel="stylesheet" href="css/style.css">
-
-  <!-- Minimal inline styling for portfolio visuals (you can move to style.css) -->
-  <style>
-    :root {
-      --accent: #0d6efd;
-      --muted: #6c757d;
-      --card-shadow: rgba(11,24,40,0.06);
-    }
-    body { font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; color:#222; background:#fff; }
-    #navigation { background:#fff; box-shadow:0 2px 6px rgba(0,0,0,0.04); }
-    #navigation .navbar-brand { font-weight:700; color:var(--accent); }
-    #navigation .nav-link { color:#333; margin-left:.5rem; }
-    /* Slides (kept simple — your superslides CSS/js will override if present) */
-    #slides { position:relative; min-height:320px; display:flex; align-items:center; justify-content:center; background:#f6f9ff; margin-bottom:2rem; }
-    .titleMessage .main { font-size:36px; font-weight:700; letter-spacing:.6px; }
-    .titleMessage .sub { color:var(--muted); margin-top:6px; }
-
-    .section { padding:48px 0; }
-    .section h2 { font-weight:700; margin-bottom:8px; }
-    .section p.lead { color:var(--muted); margin-bottom:18px; }
-
-    .aboutImage { width:100%; border-radius:8px; box-shadow:0 8px 24px rgba(21,32,43,0.06); }
-
-    .skill { padding:18px; text-align:center; }
-    .skill h4 { margin-top:10px; font-size:16px; }
-
-    /* Portfolio */
-    .portfolio { background:#fbfbfd; }
-    .portfolio .filters { margin-bottom:20px; text-align:center; }
-    .portfolio .filters .btn { margin:6px; min-width:96px; }
-    .grid { margin:0 -8px; }
-    .element-item { padding:8px; margin-bottom:16px; }
-    .portfolio .card {
-      border:none;
-      border-radius:8px;
-      overflow:hidden;
-      box-shadow:0 8px 28px var(--card-shadow);
-      transition: transform .18s ease, box-shadow .18s ease;
-      background:#fff;
-      display:flex;
-      flex-direction:column;
-      height:100%;
-    }
-    .portfolio .card:hover { transform:translateY(-6px); box-shadow:0 18px 44px rgba(11,24,40,0.12); }
-    .portfolio .card img { width:100%; height:200px; object-fit:cover; display:block; }
-    .portfolio .card-body { padding:12px 14px; text-align:center; flex:1; display:flex; flex-direction:column; justify-content:center; }
-    .portfolio .card-title { margin:0; font-size:16px; font-weight:600; color:#222; }
-    .portfolio .card-sub { font-size:13px; color:var(--muted); margin-top:6px; }
-
-    /* Tableau section */
-    #tableau .card img { height:280px; object-fit:cover; }
-
-    /* Responsive tweaks */
-    @media (max-width:575px) {
-      .portfolio .card img { height:150px; }
-      #slides { min-height:200px; }
-      #tableau .card img { height:170px; }
-    }
-  </style>
-</head>
-<body>
-
-  <!-- NAV -->
-  <nav id="navigation" class="navbar navbar-expand-lg navbar-light">
-    <div class="container">
-      <a class="navbar-brand" href="#">Ria Paneri</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-          <li class="nav-item"><a class="nav-link" href="#tableau">Tableau</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- HERO / SLIDES: kept same structure as original -->
-  <div id="slides">
-    <div class="overlay"></div>
-
-    <div class="slides-container">
-      <img src="img/slide1.jpg" alt="">
-      <img src="img/slide2.jpg" alt="">
-      <img src="img/slide3.jpg" alt="">
-    </div>
-
-    <div class="titleMessage text-center">
-      <div class="heading">
-        <p class="main">RIA PANERI RAVAL</p>
-        <p class="sub typed">Services Analyst — Data Visualization & Reporting</p>
-      </div>
-    </div>
-
-    <nav class="slides-navigation">
-      <a href="#" class="next"></a>
-      <a href="#" class="prev"></a>
-    </nav>
-  </div>
-
-  <!-- ABOUT -->
-  <section id="about" class="section">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-5 mb-3">
-          <img src="img/Ria.jpg" alt="Ria" class="aboutImage">
-        </div>
-        <div class="col-md-7">
-          <h2>About Me</h2>
-          <p class="lead">I’m a results-driven Services Analyst with over 6 years of experience specializing in data analysis, BI dashboarding, and financial reporting. I hold an M.Tech in Computer Software from B.H. Gardi College of Engineering, Gujarat.</p>
-
-          <p>Currently, I work as a Senior Associate – Projects at Borderless Access, leading end-to-end reporting implementations using Power BI, Tableau, and Excel. I build interactive dashboards, perform variance and trend analysis, and translate business KPIs into decision-ready insights for global clients.</p>
-
-          <p>Previously, I worked as a Technical SEO & Reporting Analyst at AnandaVak and earlier at EYUVA Technologies focusing on on-page SEO and dashboard-driven reporting. I combine analytical rigor with stakeholder communication to deliver actionable outcomes.</p>
-
-          <p class="mb-0"><strong>Key tools:</strong> Tableau • Power BI • Excel (advanced) • Google Analytics • Figma • WordPress</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills" class="skillSection section bg-white">
-    <div class="container text-center">
-      <h2>Technical Skills</h2>
-      <p class="lead">Representation of my proficiency</p>
-
-      <div class="owl-carousel owl-theme">
-        <div class="skill"><span class="chart" data-percent="90">90%</span><h4>HTML</h4></div>
-        <div class="skill"><span class="chart" data-percent="80">80%</span><h4>CSS</h4></div>
-        <div class="skill"><span class="chart" data-percent="90">90%</span><h4>WordPress</h4></div>
-        <div class="skill"><span class="chart" data-percent="70">70%</span><h4>SEO</h4></div>
-        <div class="skill"><span class="chart" data-percent="80">80%</span><h4>Power BI</h4></div>
-        <div class="skill"><span class="chart" data-percent="70">70%</span><h4>Data Analysis</h4></div>
-        <div class="skill"><span class="chart" data-percent="80">80%</span><h4>Data Visualization</h4></div>
-        <div class="skill"><span class="chart" data-percent="90">90%</span><h4>Figma</h4></div>
-        <div class="skill"><span class="chart" data-percent="70">70%</span><h4>Excel</h4></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PORTFOLIO -->
-  <section id="portfolio" class="section portfolio">
-    <div class="container">
-      <div class="text-center mb-3">
-        <h2>Portfolio</h2>
-        <p class="lead">Dashboards, designs and websites I’ve built</p>
-      </div>
-
-      <!-- Filters -->
-      <div class="filters mb-4 text-center" role="tablist" aria-label="portfolio filters">
+<!-- Portfolio -->
+<div id="portfolio" class="section portfolio">
+  <div class="container">
+    <div class="text-center">
+      <h2>My Portfolio</h2>
+      <p>Projects I've worked on</p>
+      <div class="mb-4">
         <button class="btn btn-primary" data-filter="*">All</button>
         <button class="btn btn-outline-primary" data-filter=".excel">Excel</button>
         <button class="btn btn-outline-primary" data-filter=".figma">Figma</button>
         <button class="btn btn-outline-primary" data-filter=".website">Website</button>
         <button class="btn btn-outline-primary" data-filter=".tableau">Tableau</button>
       </div>
-
-      <!-- Grid -->
-      <div class="row grid">
-        <!-- Excel Dashboards -->
-        <div class="col-sm-6 col-md-4 element-item excel">
-          <div class="card">
-            <img src="img/Deal tracker.jpg" alt="Deal Tracker">
-            <div class="card-body">
-              <div class="card-title">Deal Tracker Dashboard</div>
-              <div class="card-sub">Excel / Reporting</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6 col-md-4 element-item excel">
-          <div class="card">
-            <img src="img/Email sales .jpg" alt="Email Sales">
-            <div class="card-body">
-              <div class="card-title">Email Sales Dashboard</div>
-              <div class="card-sub">Excel / Campaign analytics</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6 col-md-4 element-item excel">
-          <div class="card">
-            <img src="img/Sales CRM .jpg" alt="Sales CRM">
-            <div class="card-body">
-              <div class="card-title">Sales CRM Dashboard</div>
-              <div class="card-sub">CRM reporting</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Figma -->
-        <div class="col-sm-6 col-md-4 element-item figma">
-          <div class="card">
-            <img src="img/Figma design - occur community platform .jpg" alt="Occur community platform">
-            <div class="card-body">
-              <div class="card-title">Occur Community Platform</div>
-              <div class="card-sub">Figma • UI/UX</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6 col-md-4 element-item figma">
-          <div class="card">
-            <img src="img/Figma design - respiratory portal.jpg" alt="Respiratory portal">
-            <div class="card-body">
-              <div class="card-title">Respiratory Portal</div>
-              <div class="card-sub">Figma • Healthcare UX</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6 col-md-4 element-item figma">
-          <div class="card">
-            <img src="img/Figma design-Gastro community Portal.jpg" alt="Gastro Community Portal">
-            <div class="card-body">
-              <div class="card-title">Gastro Community Portal</div>
-              <div class="card-sub">Figma • Community UX</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Google Analytics (analytics) -->
-        <div class="col-sm-6 col-md-4 element-item excel">
-          <div class="card">
-            <img src="img/Google analytics dashboard.jpg" alt="Google Analytics">
-            <div class="card-body">
-              <div class="card-title">Google Analytics Dashboard</div>
-              <div class="card-sub">Web analytics</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Website Projects -->
-        <div class="col-sm-6 col-md-4 element-item website">
-          <div class="card">
-            <img src="img/Healthcare Portal.jpg" alt="Healthcare Portal">
-            <div class="card-body">
-              <div class="card-title">Healthcare Portal</div>
-              <div class="card-sub">WordPress / Responsive</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6 col-md-4 element-item website">
-          <div class="card">
-            <img src="img/Website - drmadhavupadhyay.png" alt="Dr Madhav">
-            <div class="card-body">
-              <div class="card-title">Dr. Madhav Upadhyay Site</div>
-              <div class="card-sub">Personal / Professional</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6 col-md-4 element-item website">
-          <div class="card">
-            <img src="img/Website - interiospacehomz.png" alt="InterioSpace Homz">
-            <div class="card-body">
-              <div class="card-title">InterioSpace Homz</div>
-              <div class="card-sub">Business website</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6 col-md-4 element-item website">
-          <div class="card">
-            <img src="img/website - analyfied.png" alt="Analyfied">
-            <div class="card-body">
-              <div class="card-title">Analyfied</div>
-              <div class="card-sub">Marketing / Research</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6 col-md-4 element-item website">
-          <div class="card">
-            <img src="img/website - eurolanditstore.png" alt="Euroland IT Store">
-            <div class="card-body">
-              <div class="card-title">Euroland IT Store</div>
-              <div class="card-sub">E-commerce</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6 col-md-4 element-item website">
-          <div class="card">
-            <img src="img/website - jbsnaturopathy.png" alt="JBS Naturopathy">
-            <div class="card-body">
-              <div class="card-title">JBS Naturopathy</div>
-              <div class="card-sub">Clinic site</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6 col-md-4 element-item website">
-          <div class="card">
-            <img src="img/website - pencilsketch.png" alt="PencilSketch">
-            <div class="card-body">
-              <div class="card-title">PencilSketch</div>
-              <div class="card-sub">Creative portfolio</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6 col-md-4 element-item website">
-          <div class="card">
-            <img src="img/website - trinityenterprise.png" alt="Trinity Enterprise">
-            <div class="card-body">
-              <div class="card-title">Trinity Enterprise</div>
-              <div class="card-sub">Company website</div>
-            </div>
-          </div>
-        </div>
-
-      </div> <!-- /.row grid -->
-    </div> <!-- /.container -->
-  </section>
-
-  <!-- TABLEAU Section (new tab-like section) -->
-  <section id="tableau" class="section">
-    <div class="container">
-      <div class="text-center mb-3">
-        <h2>Tableau Dashboards</h2>
-        <p class="lead">Snapshots of Tableau dashboards (images)</p>
-      </div>
-
-      <div class="row">
-        <div class="col-sm-6 mb-4 element-item tableau">
-          <div class="card">
-            <img src="img/image (3).png" alt="Tableau 1">
-            <div class="card-body text-center">
-              <div class="card-title">Tableau Dashboard 1</div>
-              <div class="card-sub">KPI Snapshot</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6 mb-4 element-item tableau">
-          <div class="card">
-            <img src="img/image (4).png" alt="Tableau 2">
-            <div class="card-body text-center">
-              <div class="card-title">Tableau Dashboard 2</div>
-              <div class="card-sub">Trend & Analysis</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6 mb-4 element-item tableau">
-          <div class="card">
-            <img src="img/image (5).png" alt="Tableau 3">
-            <div class="card-body text-center">
-              <div class="card-title">Tableau Dashboard 3</div>
-              <div class="card-sub">Geography & Sales</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6 mb-4 element-item tableau">
-          <div class="card">
-            <img src="img/image (6).png" alt="Tableau 4">
-            <div class="card-body text-center">
-              <div class="card-title">Tableau Dashboard 4</div>
-              <div class="card-sub">Performance snapshot</div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="section bg-white">
-    <div class="container">
-      <div class="text-center">
-        <h2>Contact</h2>
-        <p class="lead">Like what you see? Let's connect.</p>
-        <a class="btn btn-primary" href="mailto:riapaneri7@gmail.com">Get in touch</a>
+    <div class="row grid">
+      <!-- Excel Dashboards -->
+      <div class="col-md-4 element-item excel">
+        <div class="card">
+          <a href="img/Deal tracker.jpg" data-lightbox="portfolio" data-title="Deal Tracker Dashboard">
+            <img src="img/Deal tracker.jpg" alt="">
+          </a>
+          <div class="card-body"><h5>Deal Tracker Dashboard</h5></div>
+        </div>
       </div>
+
+      <div class="col-md-4 element-item excel">
+        <div class="card">
+          <a href="img/Email sales .jpg" data-lightbox="portfolio" data-title="Email Sales Dashboard">
+            <img src="img/Email sales .jpg" alt="">
+          </a>
+          <div class="card-body"><h5>Email Sales Dashboard</h5></div>
+        </div>
+      </div>
+
+      <div class="col-md-4 element-item excel">
+        <div class="card">
+          <a href="img/Sales CRM .jpg" data-lightbox="portfolio" data-title="Sales CRM Dashboard">
+            <img src="img/Sales CRM .jpg" alt="">
+          </a>
+          <div class="card-body"><h5>Sales CRM Dashboard</h5></div>
+        </div>
+      </div>
+
+      <!-- Figma Designs -->
+      <div class="col-md-4 element-item figma">
+        <div class="card">
+          <a href="img/Figma design - occur community platform.jpg" data-lightbox="portfolio" data-title="Occur Community Platform">
+            <img src="img/Figma design - occur community platform.jpg" alt="">
+          </a>
+          <div class="card-body"><h5>Occur Community Platform</h5></div>
+        </div>
+      </div>
+
+      <div class="col-md-4 element-item figma">
+        <div class="card">
+          <a href="img/Figma design - respiratory portal.jpg" data-lightbox="portfolio" data-title="Respiratory Portal">
+            <img src="img/Figma design - respiratory portal.jpg" alt="">
+          </a>
+          <div class="card-body"><h5>Respiratory Portal</h5></div>
+        </div>
+      </div>
+
+      <div class="col-md-4 element-item figma">
+        <div class="card">
+          <a href="img/Figma design-Gastro community Portal.jpg" data-lightbox="portfolio" data-title="Gastro Community Portal">
+            <img src="img/Figma design-Gastro community Portal.jpg" alt="">
+          </a>
+          <div class="card-body"><h5>Gastro Community Portal</h5></div>
+        </div>
+      </div>
+
+      <!-- Google Analytics -->
+      <div class="col-md-4 element-item excel">
+        <div class="card">
+          <a href="img/Google analytics dashboard.jpg" data-lightbox="portfolio" data-title="Google Analytics Dashboard">
+            <img src="img/Google analytics dashboard.jpg" alt="">
+          </a>
+          <div class="card-body"><h5>Google Analytics Dashboard</h5></div>
+        </div>
+      </div>
+
+      <!-- Website Projects -->
+      <div class="col-md-4 element-item website">
+        <div class="card">
+          <a href="img/Healthcare Portal.jpg" data-lightbox="portfolio" data-title="Healthcare Portal">
+            <img src="img/Healthcare Portal.jpg" alt="">
+          </a>
+          <div class="card-body"><h5>Healthcare Portal</h5></div>
+        </div>
+      </div>
+
+      <!-- Add other website cards here similarly -->
+
+      <!-- Tableau Projects -->
+      <div class="col-md-4 element-item tableau">
+        <div class="card">
+          <a href="img/image (3).png" data-lightbox="portfolio" data-title="Tableau Dashboard 1">
+            <img src="img/image (3).png" alt="">
+          </a>
+          <div class="card-body"><h5>Tableau Dashboard 1</h5></div>
+        </div>
+      </div>
+
+      <div class="col-md-4 element-item tableau">
+        <div class="card">
+          <a href="img/image (4).png" data-lightbox="portfolio" data-title="Tableau Dashboard 2">
+            <img src="img/image (4).png" alt="">
+          </a>
+          <div class="card-body"><h5>Tableau Dashboard 2</h5></div>
+        </div>
+      </div>
+
+      <div class="col-md-4 element-item tableau">
+        <div class="card">
+          <a href="img/image (5).png" data-lightbox="portfolio" data-title="Tableau Dashboard 3">
+            <img src="img/image (5).png" alt="">
+          </a>
+          <div class="card-body"><h5>Tableau Dashboard 3</h5></div>
+        </div>
+      </div>
+
+      <div class="col-md-4 element-item tableau">
+        <div class="card">
+          <a href="img/image (6).png" data-lightbox="portfolio" data-title="Tableau Dashboard 4">
+            <img src="img/image (6).png" alt="">
+          </a>
+          <div class="card-body"><h5>Tableau Dashboard 4</h5></div>
+        </div>
+      </div>
+
     </div>
-  </section>
-
-  <!-- Scripts: jQuery, Bootstrap, Isotope -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-  <!-- Keep your existing scripts (superslides, easypiechart, owl, typed) if you have them in /js/ -->
-  <script src="js/jquery.superslides.min.js"></script>
-  <script src="js/jquery.easypiechart.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/typed.min.js"></script>
-
-  <!-- Isotope for filtering -->
-  <script src="https://unpkg.com/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
-  <!-- Initialization -->
-  <script>
-    $(document).ready(function () {
-      // Initialize owl (if you have carousel assets)
-      if (typeof $.fn.owlCarousel !== 'undefined') {
-        $('.owl-carousel').owlCarousel({
-          loop: true,
-          margin: 10,
-          nav: true,
-          responsive: { 0: { items: 1 }, 600: { items: 3 }, 1000: { items: 5 } }
-        });
-      }
-
-      // Initialize charts (easyPieChart) if available
-      if (typeof $.fn.easyPieChart !== 'undefined') {
-        $('.chart').each(function () {
-          var $this = $(this);
-          $this.easyPieChart({
-            size: 90,
-            barColor: '#0d6efd',
-            trackColor: '#f0f0f0',
-            scaleColor: false,
-            lineWidth: 8,
-            animate: 1200
-          });
-        });
-      }
-
-      // Isotope grid init
-      var $grid = $('.grid').isotope({
-        itemSelector: '.element-item',
-        layoutMode: 'fitRows'
-      });
-
-      // Filter buttons behavior
-      $('.filters').on('click', 'button', function () {
-        var filterValue = $(this).attr('data-filter');
-        $grid.isotope({ filter: filterValue });
-
-        // toggle active state on buttons
-        $('.filters .btn').removeClass('btn-primary').addClass('btn-outline-primary');
-        $(this).removeClass('btn-outline-primary').addClass('btn-primary');
-      });
-
-      // Set "All" active by default
-      $('.filters .btn[data-filter="*"]').removeClass('btn-outline-primary').addClass('btn-primary');
-    });
-  </script>
-</body>
-</html>
+  </div>
+</div>
