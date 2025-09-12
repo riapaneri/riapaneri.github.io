@@ -23,8 +23,63 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <script src="js/script.js"></script>
 
+  <script>
+  (function($){
+    $(function(){
+      // initialize isotope
+      var $grid = $('.grid').isotope({
+        itemSelector: '.element-item',
+        layoutMode: 'fitRows'
+      });
+
+      // filters
+      $('.filters').on('click', '.btn', function(e){
+        e.preventDefault();
+        var filterValue = $(this).attr('data-filter');
+        $grid.isotope({ filter: filterValue });
+
+        $('.filters .btn').removeClass('btn-primary').addClass('btn-outline-primary');
+        $(this).removeClass('btn-outline-primary').addClass('btn-primary');
+      });
+
+      // set All active initially
+      $('.filters .btn[data-filter="*"]').removeClass('btn-outline-primary').addClass('btn-primary');
+
+      // open modal on thumbnail click
+      $('.thumb').on('click', function(){
+        var src = $(this).attr('data-full') || $(this).attr('src');
+        var alt = $(this).attr('alt') || '';
+        $('#portfolioModalImg').attr('src', src);
+        $('#portfolioModalCaption').text(alt);
+        $('#portfolioModal').modal('show');
+      });
+
+      // clear on modal hide (optional)
+      $('#portfolioModal').on('hidden.bs.modal', function () {
+        $('#portfolioModalImg').attr('src','');
+        $('#portfolioModalCaption').text('');
+      });
+    });
+  })(jQuery);
+</script>
+
   <style>
 
+  .portfolio .filters .btn { margin:6px; min-width:100px; }
+  .portfolio-card { border:none; border-radius:12px; overflow:hidden; transition:transform .25s ease, box-shadow .25s ease; box-shadow:0 10px 28px rgba(11,24,40,0.08); background:#fff; }
+  .portfolio-card:hover { transform:translateY(-8px); box-shadow:0 20px 44px rgba(11,24,40,0.16); }
+  .portfolio-card .card-img-top { height:220px; object-fit:cover; transition:transform .35s ease; display:block; }
+  .portfolio-card:hover .card-img-top { transform:scale(1.05); }
+  .portfolio-card .card-body { padding:14px; background:#fff; text-align:center; }
+  .portfolio-card .card-title { font-size:16px; font-weight:700; color:#0d6efd; margin-bottom:6px; }
+  .portfolio-card .card-sub { margin:0; color:#666; font-size:13px; }
+
+  /* responsive adjustments */
+  @media (max-width:768px) {
+    .portfolio-card .card-img-top { height:160px; }
+  }
+
+    
 /* Section Heading Fix */
 #skills h2 {
   color: #007bff !important;   /* Blue heading */
@@ -216,74 +271,175 @@
 </section>
 
 
-<!-- Portfolio -->
-<div id="portfolio" class="section portfolio">
+<section id="portfolio" class="section portfolio py-5">
   <div class="container">
-    <div class="text-center">
+    <div class="text-center mb-4" data-aos="fade-up">
       <h2>My Portfolio</h2>
-      <p>Projects I've worked on</p>
-      <div class="mb-4">
-        <button class="btn btn-primary" data-filter="*">All</button>
-        <button class="btn btn-outline-primary" data-filter=".excel">Excel</button>
-        <button class="btn btn-outline-primary" data-filter=".figma">Figma</button>
-        <button class="btn btn-outline-primary" data-filter=".website">Website</button>
-      </div>
+      <p class="lead">Dashboards, designs & websites I’ve worked on</p>
     </div>
-     <div class="row grid">
-  <!-- Excel Dashboards -->
-  <div class="col-md-4 element-item excel">
-    <div class="card"><img src="img/Deal tracker.jpg" alt=""><div class="card-body"><h5>Deal Tracker Dashboard</h5></div></div>
-  </div>
-  <div class="col-md-4 element-item excel">
-    <div class="card"><img src="img/Email sales .jpg" alt=""><div class="card-body"><h5>Email Sales Dashboard</h5></div></div>
-  </div>
-  <div class="col-md-4 element-item excel">
-    <div class="card"><img src="img/Sales CRM .jpg" alt=""><div class="card-body"><h5>Sales CRM Dashboard</h5></div></div>
-  </div>
 
-  <!-- Figma Designs -->
-  <div class="col-md-4 element-item figma">
-    <div class="card"><img src="img/Figma design - occur community platform.jpg" alt=""><div class="card-body"><h5>Occur Community Platform</h5></div></div>
-  </div>
-  <div class="col-md-4 element-item figma">
-    <div class="card"><img src="img/Figma design - respiratory portal.jpg" alt=""><div class="card-body"><h5>Respiratory Portal</h5></div></div>
-  </div>
-  <div class="col-md-4 element-item figma">
-    <div class="card"><img src="img/Figma design-Gastro community Portal.jpg" alt=""><div class="card-body"><h5>Gastro Community Portal</h5></div></div>
-  </div>
+    <!-- Filters -->
+    <div class="filters mb-4 text-center" role="tablist">
+      <button class="btn btn-primary" data-filter="*">All</button>
+      <button class="btn btn-outline-primary" data-filter=".excel">Excel</button>
+      <button class="btn btn-outline-primary" data-filter=".figma">Figma</button>
+      <button class="btn btn-outline-primary" data-filter=".website">Website</button>
+      <button class="btn btn-outline-primary" data-filter=".tableau">Tableau</button>
+    </div>
 
-  <!-- Google Analytics -->
-  <div class="col-md-4 element-item excel">
-    <div class="card"><img src="img/Google analytics dashboard.jpg" alt=""><div class="card-body"><h5>Google Analytics Dashboard</h5></div></div>
-  </div>
+    <!-- Grid -->
+    <div class="row grid">
+      <!-- Excel -->
+      <div class="col-sm-6 col-md-4 element-item excel" data-aos="fade-up" data-aos-delay="80">
+        <div class="card portfolio-card">
+          <img src="img/Deal tracker.jpg" alt="Deal Tracker Dashboard" class="card-img-top thumb" data-full="img/Deal tracker.jpg">
+          <div class="card-body text-center"><h5 class="card-title">Deal Tracker Dashboard</h5><p class="card-sub">Excel reporting</p></div>
+        </div>
+      </div>
 
-  <!-- Web Projects -->
-  <div class="col-md-4 element-item website">
-    <div class="card"><img src="img/Healthcare Portal.jpg" alt=""><div class="card-body"><h5>Healthcare Portal</h5></div></div>
-  </div>
-  <div class="col-md-4 element-item website">
-    <div class="card"><img src="img/Website - drmadhavupadhyay.png" alt=""><div class="card-body"><h5>Dr. Madhav Upadhyay Site</h5></div></div>
-  </div>
-  <div class="col-md-4 element-item website">
-    <div class="card"><img src="img/Website - interiospacehomz.png" alt=""><div class="card-body"><h5>InterioSpace Homz</h5></div></div>
-  </div>
-  <div class="col-md-4 element-item website">
-    <div class="card"><img src="img/website - analyfied.png" alt=""><div class="card-body"><h5>Analyfied</h5></div></div>
-  </div>
-  <div class="col-md-4 element-item website">
-    <div class="card"><img src="img/website - eurolanditstore.png" alt=""><div class="card-body"><h5>Euroland IT Store</h5></div></div>
-  </div>
-  <div class="col-md-4 element-item website">
-    <div class="card"><img src="img/website - jbsnaturopathy.png" alt=""><div class="card-body"><h5>JBS Naturopathy</h5></div></div>
-  </div>
-  <div class="col-md-4 element-item website">
-    <div class="card"><img src="img/website - pencilsketch.png" alt=""><div class="card-body"><h5>PencilSketch Site</h5></div></div>
-  </div>
-  <div class="col-md-4 element-item website">
-    <div class="card"><img src="img/website - trinityenterprise.png" alt=""><div class="card-body"><h5>Trinity Enterprise</h5></div></div>
-  </div>
-</div>
- </div>
+      <div class="col-sm-6 col-md-4 element-item excel" data-aos="fade-up" data-aos-delay="120">
+        <div class="card portfolio-card">
+          <img src="img/Email sales .jpg" alt="Email Sales Dashboard" class="card-img-top thumb" data-full="img/Email sales .jpg">
+          <div class="card-body text-center"><h5 class="card-title">Email Sales Dashboard</h5><p class="card-sub">Excel reporting</p></div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 element-item excel" data-aos="fade-up" data-aos-delay="160">
+        <div class="card portfolio-card">
+          <img src="img/Sales CRM .jpg" alt="Sales CRM Dashboard" class="card-img-top thumb" data-full="img/Sales CRM .jpg">
+          <div class="card-body text-center"><h5 class="card-title">Sales CRM Dashboard</h5><p class="card-sub">Excel + CRM</p></div>
+        </div>
+      </div>
+
+      <!-- Figma -->
+      <div class="col-sm-6 col-md-4 element-item figma" data-aos="fade-up" data-aos-delay="200">
+        <div class="card portfolio-card">
+          <img src="img/Figma design - occur community platform .jpg" alt="Occur Community Platform" class="card-img-top thumb" data-full="img/Figma design - occur community platform .jpg">
+          <div class="card-body text-center"><h5 class="card-title">Occur Community Platform</h5><p class="card-sub">Figma UI</p></div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 element-item figma" data-aos="fade-up" data-aos-delay="240">
+        <div class="card portfolio-card">
+          <img src="img/Figma design - respiratory portal.jpg" alt="Respiratory Portal" class="card-img-top thumb" data-full="img/Figma design - respiratory portal.jpg">
+          <div class="card-body text-center"><h5 class="card-title">Respiratory Portal</h5><p class="card-sub">Figma UI</p></div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 element-item figma" data-aos="fade-up" data-aos-delay="280">
+        <div class="card portfolio-card">
+          <img src="img/Figma design-Gastro community Portal.jpg" alt="Gastro Community Portal" class="card-img-top thumb" data-full="img/Figma design-Gastro community Portal.jpg">
+          <div class="card-body text-center"><h5 class="card-title">Gastro Community Portal</h5><p class="card-sub">Figma UI</p></div>
+        </div>
+      </div>
+
+      <!-- Google Analytics (treated as excel/dashboard) -->
+      <div class="col-sm-6 col-md-4 element-item excel" data-aos="fade-up" data-aos-delay="320">
+        <div class="card portfolio-card">
+          <img src="img/Google analytics dashboard.jpg" alt="Google Analytics Dashboard" class="card-img-top thumb" data-full="img/Google analytics dashboard.jpg">
+          <div class="card-body text-center"><h5 class="card-title">Google Analytics Dashboard</h5><p class="card-sub">Analytics</p></div>
+        </div>
+      </div>
+
+      <!-- Websites -->
+      <div class="col-sm-6 col-md-4 element-item website" data-aos="fade-up" data-aos-delay="360">
+        <div class="card portfolio-card">
+          <img src="img/Healthcare Portal.jpg" alt="Healthcare Portal" class="card-img-top thumb" data-full="img/Healthcare Portal.jpg">
+          <div class="card-body text-center"><h5 class="card-title">Healthcare Portal</h5><p class="card-sub">Website</p></div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 element-item website" data-aos="fade-up" data-aos-delay="400">
+        <div class="card portfolio-card">
+          <img src="img/Website - drmadhavupadhyay.png" alt="Dr. Madhav Upadhyay Site" class="card-img-top thumb" data-full="img/Website - drmadhavupadhyay.png">
+          <div class="card-body text-center"><h5 class="card-title">Dr. Madhav Upadhyay</h5><p class="card-sub">Website</p></div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 element-item website" data-aos="fade-up" data-aos-delay="440">
+        <div class="card portfolio-card">
+          <img src="img/Website - interiospacehomz.png" alt="InterioSpace Homz" class="card-img-top thumb" data-full="img/Website - interiospacehomz.png">
+          <div class="card-body text-center"><h5 class="card-title">InterioSpace Homz</h5><p class="card-sub">Website</p></div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 element-item website" data-aos="fade-up" data-aos-delay="480">
+        <div class="card portfolio-card">
+          <img src="img/website - analyfied.png" alt="Analyfied Website" class="card-img-top thumb" data-full="img/website - analyfied.png">
+          <div class="card-body text-center"><h5 class="card-title">Analyfied</h5><p class="card-sub">Website</p></div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 element-item website" data-aos="fade-up" data-aos-delay="520">
+        <div class="card portfolio-card">
+          <img src="img/website - eurolanditstore.png" alt="Euroland IT Store" class="card-img-top thumb" data-full="img/website - eurolanditstore.png">
+          <div class="card-body text-center"><h5 class="card-title">Euroland IT Store</h5><p class="card-sub">E-commerce</p></div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 element-item website" data-aos="fade-up" data-aos-delay="560">
+        <div class="card portfolio-card">
+          <img src="img/website - jbsnaturopathy.png" alt="JBS Naturopathy" class="card-img-top thumb" data-full="img/website - jbsnaturopathy.png">
+          <div class="card-body text-center"><h5 class="card-title">JBS Naturopathy</h5><p class="card-sub">Website</p></div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 element-item website" data-aos="fade-up" data-aos-delay="600">
+        <div class="card portfolio-card">
+          <img src="img/website - pencilsketch.png" alt="PencilSketch" class="card-img-top thumb" data-full="img/website - pencilsketch.png">
+          <div class="card-body text-center"><h5 class="card-title">PencilSketch</h5><p class="card-sub">Website</p></div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 element-item website" data-aos="fade-up" data-aos-delay="640">
+        <div class="card portfolio-card">
+          <img src="img/website - trinityenterprise.png" alt="Trinity Enterprise" class="card-img-top thumb" data-full="img/website - trinityenterprise.png">
+          <div class="card-body text-center"><h5 class="card-title">Trinity Enterprise</h5><p class="card-sub">Website</p></div>
+        </div>
+      </div>
+
+      <!-- Tableau images -->
+      <div class="col-sm-6 col-md-4 element-item tableau" data-aos="fade-up" data-aos-delay="680">
+        <div class="card portfolio-card">
+          <img src="img/image (3).png" alt="Tableau Dashboard 1" class="card-img-top thumb" data-full="img/image (3).png">
+          <div class="card-body text-center"><h5 class="card-title">Tableau Dashboard 1</h5><p class="card-sub">Tableau</p></div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 element-item tableau" data-aos="fade-up" data-aos-delay="720">
+        <div class="card portfolio-card">
+          <img src="img/image (4).png" alt="Tableau Dashboard 2" class="card-img-top thumb" data-full="img/image (4).png">
+          <div class="card-body text-center"><h5 class="card-title">Tableau Dashboard 2</h5><p class="card-sub">Tableau</p></div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 element-item tableau" data-aos="fade-up" data-aos-delay="760">
+        <div class="card portfolio-card">
+          <img src="img/image (5).png" alt="Tableau Dashboard 3" class="card-img-top thumb" data-full="img/image (5).png">
+          <div class="card-body text-center"><h5 class="card-title">Tableau Dashboard 3</h5><p class="card-sub">Tableau</p></div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 element-item tableau" data-aos="fade-up" data-aos-delay="800">
+        <div class="card portfolio-card">
+          <img src="img/image (6).png" alt="Tableau Dashboard 4" class="card-img-top thumb" data-full="img/image (6).png">
+          <div class="card-body text-center"><h5 class="card-title">Tableau Dashboard 4</h5><p class="card-sub">Tableau</p></div>
+        </div>
+      </div>
+
+    </div> <!-- /.row.grid -->
+  </div> <!-- /.container -->
+</section>
+
+<!-- Lightbox Modal (Bootstrap style) -->
+<div id="portfolioModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+    <div class="modal-content bg-transparent border-0">
+      <div class="modal-body text-center p-0">
+        <button type="button" class="close text-white p-3" data-dismiss="modal" aria-label="Close" style="position:absolute;right:0;z-index:20;"><span aria-hidden="true" style="font-size:32px">&times;</span></button>
+        <img id="portfolioModalImg" src="" alt="" style="max-width:100%; max-height:80vh; border-radius:8px; box-shadow:0 10px 40px rgba(0,0,0,0.6);">
+        <div id="portfolioModalCaption" style="color:#fff; margin-top:10px;"></div>
+      </div>
     </div>
   </div>
 </div>
@@ -312,6 +468,7 @@ $(document).ready(function () {
 
 </body>
 </html>
+
 
 
 
