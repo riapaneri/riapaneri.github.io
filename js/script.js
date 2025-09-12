@@ -7,7 +7,7 @@ $(document).ready(function() {
 	});
 
 	var typed = new Typed(".typed", {
-		strings:["MTECH (Computer Software).", "Software Developer.", "Web Designer.", "Graphic Designer"],
+		strings:["MTECH (Computer Software).", "Data Analyst & BI Specialist.", "Web Developer & SEO Expert.", "UI/UX Designer"],
 		typeSpeed:70,
 		loop:true,
 		startDelay:1000,
@@ -45,3 +45,4 @@ $(document).ready(function() {
 
 	
 });
+
